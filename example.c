@@ -2,5 +2,6 @@
 
 int main(int argc, char args[]){
     int *ptr;
-    printf("%i",sizeof(ptr));
+    printf("%li",sizeof(ptr));
+    printf("HOla\0");
 }
