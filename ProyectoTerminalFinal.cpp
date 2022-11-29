@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
-#include <ctring.h>
+#include <cstring>
 
 using namespace std;
 
@@ -9,17 +9,24 @@ int main(int argc, char **argv){
     char *oper = new char();
     cout << "[ Shell BIENVENIDO ]\n" << endl;
     cout << "\t Consultar Ayuda -- help for more information\n\n";
-    while (oper != "SALIR" || oper != "EXIT")
+    while (!(strcmp(oper, "SALIR") == 0 || strcmp(oper, "EXIT") == 0))
     {
         cout << "Shell@$ ";
         cin >> oper;
-        if (strcmp(oper, "TERMINAL"))
+        if (strcmp(oper, "TERMINAL") == 0)
         {
             cout << oper << endl;
         }
-        else {
-            cout << oper << ": Orden no encontrada\n" << endl;
+        else
+        {
+            if (!(strcmp(oper, "SALIR") == 0 || strcmp(oper, "EXIT") == 0))
+            {
+                cout << oper << ": Orden no encontrada\n" << endl;
+            }
+            /* no hacer nada */
         }
         
     }
+    delete oper;
+    return 0;
 }
