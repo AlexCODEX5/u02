@@ -1,8 +1,14 @@
 #include <iostream>
-#include <stdlib.h>
-#include <cstring>
+//#include <stdlib.h>     // 
+#include <cstring>      // permitira la conversion de cadenas en c de forma nativa
+#include <sys/wait.h>   //nos va a permitir usar la  funcion wait
 
 using namespace std;
+/*
+    El interprete recibira un comando por linea y lo enviara a un hilo en segundo plano
+    Los hilos principales recibiran comandos de interfaz de ayuda al usuario
+    Recibira comandos basicos para manejar procesos o recibir comandos del Sistema operativo
+*/
 
 int main(int argc, char **argv){
     // Parse command line arguments: 
